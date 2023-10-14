@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Medlix.Backend.API": {
+      "commandName": "Project",
+      "environmentVariables": {
+        
+      }
+    }
+  }
+}

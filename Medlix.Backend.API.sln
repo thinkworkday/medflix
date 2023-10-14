@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medlix.Backend.API", "Medlix.Backend.API\Medlix.Backend.API\Medlix.Backend.API.csproj", "{20C5F439-F37D-418E-9EF1-D4F1FB81BB50}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medlix.Backend.API.BAL", "Medlix.Backend.API\Medlix.Backend.API.BAL\Medlix.Backend.API.BAL.csproj", "{F226A664-DFDD-4C4F-9F33-D8C6489EC350}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medlix.Backend.API.Core", "Medlix.Backend.API\Medlix.Backend.API.Core\Medlix.Backend.API.Core.csproj", "{7EDE2B6C-E26D-4CB4-969E-4663F55F8691}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CareAPIFunction", "CareAPIFunction", "{701E4C17-5A41-4A4D-A6EF-181B704B9692}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "UnitTesting\UnitTesting.csproj", "{152B6A06-1135-4997-8D9E-35CE628E791D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20C5F439-F37D-418E-9EF1-D4F1FB81BB50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C5F439-F37D-418E-9EF1-D4F1FB81BB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C5F439-F37D-418E-9EF1-D4F1FB81BB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C5F439-F37D-418E-9EF1-D4F1FB81BB50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F226A664-DFDD-4C4F-9F33-D8C6489EC350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F226A664-DFDD-4C4F-9F33-D8C6489EC350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F226A664-DFDD-4C4F-9F33-D8C6489EC350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F226A664-DFDD-4C4F-9F33-D8C6489EC350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EDE2B6C-E26D-4CB4-969E-4663F55F8691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EDE2B6C-E26D-4CB4-969E-4663F55F8691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EDE2B6C-E26D-4CB4-969E-4663F55F8691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EDE2B6C-E26D-4CB4-969E-4663F55F8691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{152B6A06-1135-4997-8D9E-35CE628E791D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{152B6A06-1135-4997-8D9E-35CE628E791D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{152B6A06-1135-4997-8D9E-35CE628E791D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{152B6A06-1135-4997-8D9E-35CE628E791D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{20C5F439-F37D-418E-9EF1-D4F1FB81BB50} = {701E4C17-5A41-4A4D-A6EF-181B704B9692}
+		{F226A664-DFDD-4C4F-9F33-D8C6489EC350} = {701E4C17-5A41-4A4D-A6EF-181B704B9692}
+		{7EDE2B6C-E26D-4CB4-969E-4663F55F8691} = {701E4C17-5A41-4A4D-A6EF-181B704B9692}
+		{152B6A06-1135-4997-8D9E-35CE628E791D} = {701E4C17-5A41-4A4D-A6EF-181B704B9692}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8E5EB50-0CEE-456E-B5D4-3984D1BC455F}
+	EndGlobalSection
+EndGlobal

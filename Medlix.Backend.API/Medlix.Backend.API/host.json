@@ -1,0 +1,28 @@
+{
+  "version": "2.0",
+  "logging": {
+    "logLevel": {
+      "CareAPI.CareBackendFunction": "Information"
+    },
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
+    }
+  },
+  "extensions": {
+    "http": {
+      "customHeaders": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+        "Cross-Origin-Opener-Policy": "same-origin-allow-popups",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "X-XSS-Protection": "1; mode=block",
+        "Permissions-Policy": "microphone=(self),geolocation=(self),fullscreen=(self),camera=(self)",
+        "Content-Security-Policy": "default-src 'none'; frame-ancestors 'none'"
+      }
+    }
+  }
+}

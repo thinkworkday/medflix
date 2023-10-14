@@ -1,0 +1,84 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+# - development
+- none
+
+parameters:
+- name: Environment
+  displayName: Choose Environment
+  type: string
+  values:
+    - Production
+    - Acceptance
+    - Testing
+    - TestingA
+    - TestingB
+    - TestingC
+    - Dev
+  default: Dev
+
+- name: location
+  displayName: 'Enter Location'
+  type: string
+  default: 'westeurope'
+
+variables:
+# - group: Sensitive Data
+- group: ${{ parameters.Environment }}
+- name: location
+  value: ${{ parameters.location }}
+
+stages:
+- stage: 'Build_Stage' #Stage name cannot have spaces
+  displayName: 'Build Ingest' #Name displayed when viewing in Azure DevOps
+  jobs:
+  - job: 'Build_Job' #Job name cannot have spaces
+    displayName: 'Application Build' #Name displayed when viewing in Azure DevOps
+    pool:
+      vmImage: windows-2019
+    steps:
+    - task: UseDotNet@2
+      displayName: 'Use .NET Core sdk 6.x'
+      inputs:
+        version: 6.x
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Build project'
+      inputs:
+        projects: '**/Medlix.Backend.API.csproj'
+        arguments: '--output publish_output --configuration Release'
+  
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
+      inputs:
+        rootFolderOrFile: 'publish_output/'
+        includeRootFolder: false
+      
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: drop'
+    
+  - job: 'Deployment' #Job name cannot have spaces
+    displayName: 'Function Deployment' #Name displayed when viewing in Azure DevOps
+    pool:
+      name: $(azure-agent-pool)
+    steps:
+    - task: DownloadBuildArtifacts@1
+      inputs:
+        buildType: 'current'
+        downloadType: 'single'
+        artifactName: 'drop'
+        downloadPath: '$(System.ArtifactsDirectory)'
+        
+    - task: AzureFunctionApp@1
+      inputs:
+        azureSubscription: '$(ServiceConnection)'
+        appType: 'functionApp'
+        appName: 'func-medlix-backend-$(Environment)-westeu'
+        package: '$(System.ArtifactsDirectory)/**/*.zip'
+        deploymentMethod: 'auto'
+    
+    dependsOn: 'Build_Job'
